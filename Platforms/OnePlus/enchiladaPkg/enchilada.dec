@@ -1,0 +1,10 @@
+[Defines]
+  DEC_SPECIFICATION                   = 0x00010005
+  PACKAGE_NAME                        = enchilada
+  PACKAGE_GUID                        = E9BA5DF7-E65A-4396-B905-258E8B26B5D9
+  PACKAGE_VERSION                     = 0.1
+
+[Guids]
+  # NOTE: For these Values you need to use the GUID you generated earlier!
+  # These are just example Values.
+  genchiladaTokenSpaceGuid    = { 0xE9BA5DF7, 0xE65A, 0x4396, { 0xB9, 0x05, 0x25, 0x8E, 0xB2, 0x26, 0xB5, 0xD9 } }
