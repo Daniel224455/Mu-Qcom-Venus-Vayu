@@ -96,7 +96,7 @@ python3 "Platforms/${TARGET_DEVICE_VENDOR}/${TARGET_DEVICE}Pkg/PlatformBuild.py"
 
 # Apply Mu Patches
 ## Mu
-if [ ${TARGET_ARCH} == ARM ]; then
+if [ ${TARGET_ARCH} == "ARM" ]; then
 	cp ./MuPatches/Math.patch ./Common/Mu/
 	cd Common/Mu||exit 1
 	git apply Math.patch &> /dev/null
@@ -104,10 +104,11 @@ if [ ${TARGET_ARCH} == ARM ]; then
 fi
 
 ## Mu_Basecore
-cp ./MuPatches/UsbBus.patch ./MuPatches/BdsWait.patch ./Mu_Basecore/
+cp ./MuPatches/UsbBus.patch ./MuPatches/BdsWait.patch ./MuPatches/Tools-Conf.patch ./Mu_Basecore/
 cd Mu_Basecore||exit 1
 git apply UsbBus.patch &> /dev/null
 git apply BdsWait.patch &> /dev/null
+git apply Tools-Conf.patch &> /dev/null
 cd ..
 
 ## Mu_Tiano
