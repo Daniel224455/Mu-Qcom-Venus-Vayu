@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build an Android kernel that is actually UEFI disguised as the Kernel
-cat ./BootShim/BootShim.bin "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd" > "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd-bootshim"||exit 1
+cat ./BootShim/AARCH64/BootShim.bin "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd" > "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd-bootshim"||exit 1
 gzip -c < "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd-bootshim" > "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd-bootshim.gz"||exit 1
 cat "./Build/enchiladaPkg/${_TARGET_BUILD_MODE}_CLANGDWARF/FV/ENCHILADA_UEFI.fd-bootshim.gz" ./Resources/DTBs/enchilada.dtb > ./Resources/bootpayload.bin||exit 1
 
