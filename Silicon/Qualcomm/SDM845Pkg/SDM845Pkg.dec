@@ -1,8 +1,0 @@
-[Defines]
-  DEC_SPECIFICATION                   = 0x00010005
-  PACKAGE_NAME                        = SDM845Pkg
-  PACKAGE_GUID                        = e263d3a3-2e78-4228-b39a-6b95a992c3b2
-  PACKAGE_VERSION                     = 0.1
-
-[Guids.common]
-  gSDM845PkgTokenSpaceGuid            = { 0xe263d3a3, 0x2e78, 0x4228, { 0xb3, 0x9a, 0x6b, 0x95, 0xa9, 0x92, 0xc3, 0xb2 } }
