@@ -27,7 +27,7 @@ APRIORI DXE {
   INF Binaries/enchilada/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
-  INF Binaries/enchilada/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
+  # INF Binaries/enchilada/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
