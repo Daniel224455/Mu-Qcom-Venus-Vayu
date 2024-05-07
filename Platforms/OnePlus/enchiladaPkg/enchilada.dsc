@@ -63,13 +63,13 @@
   gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
   # Dynamic RAM Start Address
-  gSiliciumPkgTokenSpaceGuid.PcdRamPartitionBase|0xA0000000
+  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA0000000
 
   # SD Card Slot
-  gSiliciumPkgTokenSpaceGuid.PcdSDCardSlotPresent|FALSE             
+  gQcomPkgTokenSpaceGuid.PcdSDCardSlotPresent|FALSE             
   
   # USB Controller
-  gSiliciumPkgTokenSpaceGuid.PcdStartUsbController|TRUE            # This should be TRUE unless your UsbConfigDxe is Patched to be Dual Role.
+  gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE            # This should be TRUE unless your UsbConfigDxe is Patched to be Dual Role.
 
 [PcdsDynamicDefault]
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
