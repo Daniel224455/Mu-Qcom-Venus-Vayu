@@ -66,7 +66,7 @@
 !if $(USE_DISPLAYDXE) == 1
   INF Binaries/enchilada/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 !else
-  INF QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  INF SiliciumPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 !endif
 
   INF Binaries/enchilada/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
