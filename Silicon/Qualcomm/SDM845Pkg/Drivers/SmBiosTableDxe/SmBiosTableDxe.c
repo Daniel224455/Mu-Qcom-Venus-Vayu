@@ -248,7 +248,6 @@ InitializeSmBiosTable (
   CacheInfoUpdateSmbiosType7     ();
 
   // Get RAM Partitions
-  Status = GetRamPartitions (&RamPartitionTable, &NumPartitions, &PartitionVersion);
   Status = GetRamPartitions (&RamPartitionTable, &PartitionVersion);
   NumPartitions = RamPartitionTable->NumPartitions;
   if (EFI_ERROR (Status) || (NumPartitions < 1) || (PartitionVersion == 1)) {
