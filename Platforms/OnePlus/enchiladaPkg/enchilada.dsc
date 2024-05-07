@@ -26,11 +26,11 @@
   SKUID_IDENTIFIER               = DEFAULT
   FLASH_DEFINITION               = enchiladaPkg/enchilada.fdf
   USE_DISPLAYDXE                 = 0
-  # Set this to 1 If your Device is A/B Device
   AB_SLOT_SUPPORT                = 1
+  HAS_BUILD_IN_KEYBOARD          = 0
 
 [BuildOptions]
-  *_*_*_CC_FLAGS =
+  *_*_*_CC_FLAGS = -DAB_SLOT_SUPPORT=$(AB_SLOT_SUPPORT) -DHAS_BUILD_IN_KEYBOARD=$(HAS_BUILD_IN_KEYBOARD)
 
 [LibraryClasses]
   DeviceMemoryMapLib|enchiladaPkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
