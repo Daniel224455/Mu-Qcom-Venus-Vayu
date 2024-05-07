@@ -28,8 +28,8 @@
 [PcdsFixedAtBuild]
   # Timer
   gArmTokenSpaceGuid.PcdArmArchTimerFreqInHz|19200000
-  gArmTokenSpaceGuid.PcdArmArchTimerSecIntrNum|1
-  gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|2
+  gArmTokenSpaceGuid.PcdArmArchTimerSecIntrNum|17
+  gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|18
 
   # GIC
   gArmTokenSpaceGuid.PcdGicDistributorBase|0x17A00000
