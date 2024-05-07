@@ -54,7 +54,7 @@
 
   INF QcomPkg/Drivers/ClockSpeedUpDxe/ClockSpeedUpDxe.inf
 
-  INF Binaries/enchilada/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
+  # INF Binaries/enchilada/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
