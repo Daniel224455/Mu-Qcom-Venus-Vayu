@@ -64,7 +64,7 @@ APRIORI DXE {
   INF Binaries/enchilada/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
 !else
-  INF QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  INF SiliciumPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 !endif
 
   INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
