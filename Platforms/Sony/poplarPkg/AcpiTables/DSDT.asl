@@ -1,4 +1,4 @@
-DefinitionBlock ("", "DSDT", 2, "QCOMM ", "MSM8998 ", 0x00000003)
+DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "MSM8998 ", 3)
 {
     Scope (\_SB)
     {
@@ -10,12 +10,12 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "MSM8998 ", 0x00000003)
         //
         // SD Card
         //
-        //Include ("sdcard.asl")
+        Include ("sd-card.asl")
 
         //
-        // PMIC
+        // PMIC (Incomplete)
         //
-        //Include ("pmic.asl")
+        Include ("pmic.asl")
 
         //
         // PEP (Incomplete)
@@ -25,12 +25,12 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "MSM8998 ", 0x00000003)
         //
         // SPMI
         //
-        //Include ("spmi.asl")
+        Include ("spmi.asl")
 
         //
         // GPIO Controller
         //
-        //Include ("gpio.asl")
+        Include ("gpio.asl")
 
         //
         // CPU Cores & Clusters
@@ -43,7 +43,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "MSM8998 ", 0x00000003)
         Include ("usb.asl")
 
         //
-        // Buttons (Incomplete)
+        // Buttons (Incomplete and Broken?)
         //
         //Include ("buttons.asl")
     }

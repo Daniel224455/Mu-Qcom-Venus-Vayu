@@ -3,58 +3,60 @@
 //
 Device (BTNS)
 {
+    Alias (\_SB.PSUB, _SUB)                                                                                                             // Subsystem ID
+
     Name (_HID, "ACPI0011")                                                                                                             // Hardware ID
     Name (_UID, 0)                                                                                                                      // Unique ID
 
-    Alias (\_SB.PSUB, _SUB)                                                                                                             // Subsystem ID
-
     Name (_CRS, ResourceTemplate ()                                                                                                     // Current Resource Settings
     {
-        GpioInt (Edge, ActiveBoth, ExclusiveAndWake, PullDown, 0x0000, "\\_SB.PM01", 0x00, ResourceConsumer, ,) { 0 }                   // GPIO Pin (Power Button)
-        GpioInt (Edge, ActiveBoth, Exclusive,        PullUp,   0x0000, "\\_SB.PM01", 0x00, ResourceConsumer, ,) { 0x85 }                // GPIO Pin (Volume Up)
-        GpioInt (Edge, ActiveBoth, Exclusive,        PullDown, 0x0000, "\\_SB.PM01", 0x84, ResourceConsumer, ,) { 1 }                   // GPIO Pin (Volume Down)
+        GpioInt (Edge, ActiveLow, ExclusiveAndWake, PullUp, 0, "\\_SB.PM01", ,) { 64 }                                                  // Power Button       (Index: 0)
+        GpioInt (Edge, ActiveLow, Exclusive,        PullUp, 0, "\\_SB.PM01", ,) { 65 }                                                  // Volume Up Button   (Index: 1)
     })
 
     Name (_DSD, Package ()                                                                                                              // Device-Specific Data
     {
-        ToUUID ("FA6BD625-9CE8-470D-A2C7-B3CA36C4282E"),
-        Package ()
+        ToUUID ("FA6BD625-9CE8-470D-A2C7-B3CA36C4282E"),                                                                                // HID Button Descriptor GUID
+
+        Package ()                                                                                                                      // Data Structure for HID Button Descriptor
         {
             Package ()
             {
-                0,
-                1,
-                0,
-                1,
-                13
-            },
+                0,                                                                                                                      // Type                (Collection)
+                1,                                                                                                                      // Unique ID
+                0,                                                                                                                      // Level Type          (Top-Level)
+                1,                                                                                                                      // Page Type           (Generic Desktop Page)
+                13                                                                                                                      // Control Type        (Portable Device Control)
+            }, 
 
             Package ()
             {
-                1,
-                0,
-                1,
-                1,
-                129
-            },
+                1,                                                                                                                      // Type                (Control)
+                0,                                                                                                                      // Button Index
+                1,                                                                                                                      // Unique ID of Parent
+                1,                                                                                                                      // Page Type           (Generic Desktop Page)
+                129                                                                                                                     // Button Function     (System Power Down)
+            }, 
 
             Package ()
             {
-                1,
-                1,
-                1,
-                12,
-                233
-            },
+                1,                                                                                                                      // Type                (Control)
+                1,                                                                                                                      // Button Index
+                1,                                                                                                                      // Unique ID of Parent
+                12,                                                                                                                     // Page Type           (Consumer Page)
+                233                                                                                                                     // Button Function     (Volume Increment)
+            }, 
 
+            /*
             Package ()
             {
-                1,
-                2,
-                1,
-                12,
-                234
-            },
+                1,                                                                                                                      // Type                (Control)
+                2,                                                                                                                      // Button Index
+                1,                                                                                                                      // Unique ID of Parent
+                12,                                                                                                                     // Page Type           (Consumer Page)
+                234                                                                                                                     // Button Function     (Volume Decrement)
+            }
+            */
         }
     })
 }
