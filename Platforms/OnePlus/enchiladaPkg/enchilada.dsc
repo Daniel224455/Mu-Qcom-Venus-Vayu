@@ -51,25 +51,25 @@
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000
 
   # SmBios
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"OnePlus Technology Co., Ltd."
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemModel|"6"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"enchilada"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"6_enchilada"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosBoardModel|"6"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"OnePlus Technology Co., Ltd."
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"6"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"enchilada"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"6_enchilada"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"6"
 
   # Simple FrameBuffer
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2280
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2280
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
   # Dynamic RAM Start Address
-  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA0000000
+  gSiliciumPkgTokenSpaceGuid.PcdRamPartitionBase|0xA0000000
 
   # SD Card Slot
-  gQcomPkgTokenSpaceGuid.PcdSDCardSlotPresent|FALSE             
+  gSiliciumPkgTokenSpaceGuid.PcdSDCardSlotPresent|FALSE             
   
   # USB Controller
-  gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE            # This should be TRUE unless your UsbConfigDxe is Patched to be Dual Role.
+  gSiliciumPkgTokenSpaceGuid.PcdStartUsbController|TRUE            # This should be TRUE unless your UsbConfigDxe is Patched to be Dual Role.
 
 [PcdsDynamicDefault]
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
