@@ -43,6 +43,7 @@
   INF Binaries/vayu/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
   INF Binaries/vayu/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
   INF Binaries/vayu/QcomPkg/Drivers/RpmhDxe/RpmhDxe.inf
+
 !if $(USE_DISPLAYDXE) == 1
   INF Binaries/vayu/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
 !endif
@@ -67,7 +68,7 @@
 !if $(USE_DISPLAYDXE) == 1
   INF Binaries/vayu/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 !else
-  INF QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  INF Siliciumkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 !endif
 
   INF Binaries/vayu/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
