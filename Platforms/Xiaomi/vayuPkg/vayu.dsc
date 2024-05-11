@@ -1,9 +1,10 @@
-## @file
+##
 #
-#  Copyright (c) 2011-2015, ARM Limited. All rights reserved.
+#  Copyright (c) 2011 - 2022, ARM Limited. All rights reserved.
 #  Copyright (c) 2014, Linaro Limited. All rights reserved.
-#  Copyright (c) 2015 - 2016, Intel Corporation. All rights reserved.
+#  Copyright (c) 2015 - 2020, Intel Corporation. All rights reserved.
 #  Copyright (c) 2018, Bingxing Wang. All rights reserved.
+#  Copyright (c) Microsoft Corporation.
 #
 #  SPDX-License-Identifier: BSD-2-Clause-Patent
 #
@@ -21,35 +22,36 @@
   DSC_SPECIFICATION              = 0x00010005
   OUTPUT_DIRECTORY               = Build/vayuPkg
   SUPPORTED_ARCHITECTURES        = AARCH64
-  BUILD_TARGETS                  = DEBUG|RELEASE
+  BUILD_TARGETS                  = RELEASE|DEBUG
   SKUID_IDENTIFIER               = DEFAULT
   FLASH_DEFINITION               = vayuPkg/vayu.fdf
-  DISPLAY_USES_RGBA              = 0
-  USE_DISPLAYDXE                 = 0
-  AB_SLOT_SUPPORT                = 1
+  USE_CUSTOM_DISPLAY_DRIVER      = 0
+  AB_SLOT_SUPPORT                = 0
+  HAS_BUILD_IN_KEYBOARD          = 0
 
   # 0 = SM8150
   # 1 = SM8150-AB
   # 2 = SM8150-AC
   SOC_TYPE                       = 2
 
-# If your SoC has multimple variants keep this Build Option
-# If not don't add this Build Option
-[BuildOptions.common]
-  *_*_*_CC_FLAGS = -DSOC_TYPE=$(SOC_TYPE) -DDISPLAY_USES_RGBA=$(DISPLAY_USES_RGBA)
+[BuildOptions]
+  *_*_*_CC_FLAGS = -DSOC_TYPE=$(SOC_TYPE) -DAB_SLOT_SUPPORT=$(AB_SLOT_SUPPORT) -DHAS_BUILD_IN_KEYBOARD=$(HAS_BUILD_IN_KEYBOARD)
 
-[LibraryClasses.common]
+[LibraryClasses]
   DeviceMemoryMapLib|vayuPkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
   DeviceConfigurationMapLib|vayuPkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
 
+[PcdsFixedAtBuild]
+  # DDR Start Address
+  gArmTokenSpaceGuid.PcdSystemMemoryBase|0x800000000
 
-[PcdsFixedAtBuild.common]
-  gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000         # Starting address
+  # Device Maintainer
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"Daniel224455"
 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVendor|L"Daniel6745"
-
+  # CPU Vector Address
   gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x9FF8C000
 
+  # UEFI Stack Addresses
   gEmbeddedTokenSpaceGuid.PcdPrePiStackBase|0x9FF90000
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000
 
@@ -57,31 +59,28 @@
   gQcomPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"Xiaomi"
   gQcomPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Poco X3 Pro"
   gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vayu"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_vayu"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosBoardModel|"PocoX3Pro"
+  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_Vayu"
+  gQcomPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Poco X3 Pro"
 
   # Simple FrameBuffer
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080 
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400 
+  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400
   gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
-  # Power Services
-  gQcomPkgTokenSpaceGuid.PcdIsPowerOkImplemented|FALSE
-
-  # Dynamic RAM
+  # Dynamic RAM Start Address
   gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xB9400000
+
+  # SD Card Slot
+  gQcomPkgTokenSpaceGuid.PcdSDCardSlotPresent|TRUE             
   
-  # SD Card
-  gQcomPkgTokenSpaceGuid.PcdSDCardSlotPresent|FALSE
+  # USB Controller
+  gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE            # This should be TRUE unless your UsbConfigDxe is Patched to be Dual Role.
 
-  # Usb Init
-  gQcomPkgTokenSpaceGuid.PcdUSBInitOnBoot|TRUE
-
-[PcdsDynamicDefault.common]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|2400 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1080 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|2400 
+[PcdsDynamicDefault]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|2400
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoHorizontalResolution|1080
+  gEfiMdeModulePkgTokenSpaceGuid.PcdSetupVideoVerticalResolution|2400
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|135
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutRow|126
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|135
