@@ -1,4 +1,4 @@
-## @file
+##
 #
 #  Copyright (c) 2018, Linaro Limited. All rights reserved.
 #
@@ -97,6 +97,9 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF SM8150Pkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
 
+  # Usb Helper
+  INF SM8150Pkg/Drivers/UsbHelperDxe/UsbHelperDxe.inf
+
   # ACPI Tables
   !include Include/ACPI.inc
 
@@ -122,7 +125,7 @@ READ_STATUS        = TRUE
 READ_LOCK_CAP      = TRUE
 READ_LOCK_STATUS   = TRUE
 
-  INF QcomPkg/PrePi/PrePi.inf
+  INF SiliciumPkg/PrePi/PrePi.inf
 
   FILE FREEFORM = dde58710-41cd-4306-dbfb-3fa90bb1d2dd {
     SECTION UI = "uefiplat.cfg"
@@ -135,4 +138,4 @@ READ_LOCK_STATUS   = TRUE
     }
   }
 
-  !include QcomPkg/Common.fdf.inc
+  !include SiliciumPkg/Common.fdf.inc
