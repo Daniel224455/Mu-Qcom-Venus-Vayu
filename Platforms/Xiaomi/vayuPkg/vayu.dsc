@@ -56,16 +56,16 @@
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000
 
   # SmBios
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"Xiaomi"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Poco X3 Pro"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vayu"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_Vayu"
-  gQcomPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Poco X3 Pro"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"Xiaomi"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Poco X3 Pro"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vayu"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_Vayu"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Poco X3 Pro"
 
   # Simple FrameBuffer
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400
-  gQcomPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2400
+  gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
   # Dynamic RAM Start Address
   gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xB9400000
