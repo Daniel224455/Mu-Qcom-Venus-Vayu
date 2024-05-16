@@ -92,7 +92,7 @@ EFIAPI
 BdsExtensionPriorityBoot (EFI_BOOT_MANAGER_LOAD_OPTION *BootOption)
 {
   EFI_STATUS  Status        = EFI_SUCCESS;
-  BOOLEAN     FrontPageBoot = MsBootPolicyLibIsVolumeUp ();
+  BOOLEAN     FrontPageBoot = TRUE;
   BOOLEAN     SlotSwitch    = MsBootPolicyLibIsVolumeDown ();
 
   MsBootPolicyLibClearBootRequests ();
