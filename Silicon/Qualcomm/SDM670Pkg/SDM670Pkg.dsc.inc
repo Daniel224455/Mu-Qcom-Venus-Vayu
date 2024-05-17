@@ -48,6 +48,7 @@
 !elseif $(SOC_TYPE) == 1
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 710 @ 2.20 GHz"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SDM710"
+!endif
 
   # CPU
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
