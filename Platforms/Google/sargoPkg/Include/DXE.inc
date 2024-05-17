@@ -74,7 +74,6 @@
   INF Binaries/sargo/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
   INF Binaries/sargo/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
-  INF Binaries/sargo/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
