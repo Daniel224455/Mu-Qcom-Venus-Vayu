@@ -1,9 +1,10 @@
 #include <Library/BaseLib.h>
-#include <Library/PlatformMemoryMapLib.h>
+#include <Library/DeviceMemoryMapLib.h>
 
-static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
-    /* Name               Address     Length      HobOption        ResourceAttribute    ArmAttributes
-                                                          ResourceType          MemoryType */
+STATIC
+ARM_MEMORY_REGION_DESCRIPTOR_EX
+gDeviceMemoryDescriptorEx[] = {
+  // Name, Address, Length, HobOption, ResourceAttribute, ArmAttributes, ResourceType, MemoryType
 
     /* DDR Regions */
     {"RAM Partition",     0x80000000, 0x01AC0000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
