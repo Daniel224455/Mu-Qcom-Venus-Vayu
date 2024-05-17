@@ -81,7 +81,6 @@ APRIORI DXE {
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
 
   INF Binaries/sargo/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
-  INF Binaries/sargo/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
   INF Binaries/sargo/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
