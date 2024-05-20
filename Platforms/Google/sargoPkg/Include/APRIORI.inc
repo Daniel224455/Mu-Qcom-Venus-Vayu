@@ -85,12 +85,15 @@ APRIORI DXE {
   INF Binaries/sargo/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
 
+  INF Binaries/generic/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
+  INF Binaries/generic/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
+
   INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
 
-  INF Binaries/sargo/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
-  INF Binaries/sargo/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
+  INF Binaries/poplar/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
+  INF Binaries/poplar/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
