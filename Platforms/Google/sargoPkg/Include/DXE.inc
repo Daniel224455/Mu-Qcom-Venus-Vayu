@@ -87,7 +87,7 @@
 
   INF Binaries/sargo/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
-  INF Binaries/sargo/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
+  # INF Binaries/sargo/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/HashDxe/HashDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 
