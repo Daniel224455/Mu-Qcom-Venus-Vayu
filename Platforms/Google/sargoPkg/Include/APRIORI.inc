@@ -48,7 +48,7 @@ APRIORI DXE {
   INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
   INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
 
-  # INF Binaries/sargo/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
+  INF Binaries/sargo/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
   # INF Binaries/sargo/QcomPkg/Drivers/UFSDxe/UFSDxe.inf
 
   INF FatPkg/EnhancedFatDxe/Fat.inf
@@ -91,7 +91,7 @@ APRIORI DXE {
 
   INF Binaries/sargo/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
-  # INF Binaries/sargo/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
+  INF Binaries/sargo/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
   INF Binaries/sargo/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
