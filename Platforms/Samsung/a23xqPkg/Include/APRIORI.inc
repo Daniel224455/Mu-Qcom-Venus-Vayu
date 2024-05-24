@@ -64,7 +64,6 @@ APRIORI DXE {
   INF SiliciumPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 !endif
 
-  INF Binaries/a23xq/QcomPkg/Drivers/FvUtilsDxe/FvUtilsDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/PILProxyDxe/PILProxyDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/PILDxe/PILDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/QcomBds/QcomBds.inf
