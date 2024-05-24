@@ -66,7 +66,6 @@ APRIORI DXE {
 
   INF Binaries/a23xq/QcomPkg/Drivers/PILDxe/PILDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/QcomBds/QcomBds.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/SPSSDxe/SPSSDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/GLinkDxe/GLinkDxe.inf
 
   INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
