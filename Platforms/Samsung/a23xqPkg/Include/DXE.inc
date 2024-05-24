@@ -58,7 +58,7 @@
   INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
 
 !if $(USE_CUSTOM_DISPLAY_DRIVER) == 1
-  INF Binaries/a23xq/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
+  INF Binaries/a23xq/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
 !endif
   INF Binaries/a23xq/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
