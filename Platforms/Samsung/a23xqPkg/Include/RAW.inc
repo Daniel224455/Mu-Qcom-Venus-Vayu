@@ -63,11 +63,6 @@
     SECTION RAW = Binaries/a23xq/RawFiles/uefipil.cfg
   }
 
-  FILE FREEFORM = 45FE4B7C-150C-45DA-A021-4BEB2048EC6F {
-    SECTION UI = "QcomChargerCfg.cfg"
-    SECTION RAW = Binaries/a23xq/RawFiles/QcomChargerCfg.cfg
-  }
-
   FILE FREEFORM = F780C779-DD7C-47CD-BD1A-5EB414C51704 {
     SECTION UI = "BATTERY.PROVISION"
     SECTION RAW = Binaries/a23xq/RawFiles/BATTERY.PROVISION
