@@ -25,7 +25,6 @@ APRIORI DXE {
   INF Binaries/a23xq/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/ProjectInfoDxe/ProjectInfoDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
