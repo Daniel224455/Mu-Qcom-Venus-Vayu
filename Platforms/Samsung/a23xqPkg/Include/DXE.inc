@@ -106,4 +106,3 @@
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/BoardInfoDxe/BoardInfoDxe.inf
 
   #INF Binaries/a23xq/QcomPkg/Drivers/PILDxe/PILDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/SPSSDxe/SPSSDxe.inf
