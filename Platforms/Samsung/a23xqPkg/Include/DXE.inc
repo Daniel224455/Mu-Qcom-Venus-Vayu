@@ -46,7 +46,6 @@
 
   INF QcomPkg/Drivers/ClockSpeedUpDxe/ClockSpeedUpDxe.inf
 
-  INF Binaries/a23xq/QcomPkg/Drivers/ICBDxe/ICBDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
 
   INF QcomPkg/Drivers/DynamicRAMDxe/DynamicRAMDxe.inf
