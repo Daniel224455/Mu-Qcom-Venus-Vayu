@@ -83,7 +83,6 @@ APRIORI DXE {
 
   INF Binaries/a23xq/QcomPkg/Drivers/SPIDxe/SPIDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
