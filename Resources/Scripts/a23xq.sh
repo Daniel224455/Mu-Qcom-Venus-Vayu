@@ -15,7 +15,7 @@ python3 ./Resources/Scripts/mkbootimg.py \
   --os_version 13.0.0 \
   --os_patch_level "$(date '+%Y-%m')" \
   --header_version 1 \
-  -o Mu-a23xq.img \
+  -o boot.img \
   ||_error "\nFailed to create Android Boot Image!\n"
 
 # Make flashable .tar file for Odin/Heimdall
