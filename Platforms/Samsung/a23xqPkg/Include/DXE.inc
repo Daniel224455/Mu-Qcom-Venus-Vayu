@@ -81,8 +81,6 @@
   INF Binaries/a23xq/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
 
   INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
