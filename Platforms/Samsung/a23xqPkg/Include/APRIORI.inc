@@ -119,6 +119,8 @@ APRIORI DXE {
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/MuicDxe/MuicDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/ChgDxe/ChgDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/VibDxe/VibDxe.inf
+  INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/GuidedFvDxe/GuidedFvDxe.inf
+  INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/BoardInfoDxe/BoardInfoDxe.inf
 
   INF EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
