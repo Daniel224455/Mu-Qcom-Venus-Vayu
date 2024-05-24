@@ -17,3 +17,7 @@ python3 ./Resources/Scripts/mkbootimg.py \
   --header_version 1 \
   -o Mu-a23xq.img \
   ||_error "\nFailed to create Android Boot Image!\n"
+
+# Make flashable .tar file for Odin/Heimdall
+tar -c boot.img -f Mu-gts8.tar||exit 1
+mv boot.img Mu-gts8.img||exit 1
