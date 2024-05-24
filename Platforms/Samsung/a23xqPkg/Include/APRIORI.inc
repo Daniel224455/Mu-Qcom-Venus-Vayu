@@ -58,8 +58,6 @@ APRIORI DXE {
 
   INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
 
-  INF Binaries/a23xq/QcomPkg/Drivers/FeatureEnablerDxe/FeatureEnablerDxe.inf
-
 !if $(USE_CUSTOM_DISPLAY_DRIVER) == 1
   INF Binaries/a23xq/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 !else
