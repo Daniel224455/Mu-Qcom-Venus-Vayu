@@ -97,7 +97,6 @@ APRIORI DXE {
   INF Binaries/a23xq/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
 !endif
   INF Binaries/a23xq/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/UCDxe/UCDxe.inf
   INF Binaries/a23xq/QcomPkg/SocPkg/StraitPkg/Drivers/RNGDxe/RngDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/CcicDxe/CcicDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/MuicDxe/MuicDxe.inf
