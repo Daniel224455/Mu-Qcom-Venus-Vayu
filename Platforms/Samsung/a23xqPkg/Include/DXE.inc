@@ -67,7 +67,6 @@
   INF Binaries/a23xq/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SdccDxe/SdccDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/FeatureEnablerDxe/FeatureEnablerDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/MinidumpTADxe/MinidumpTADxe.inf
 
 !if $(USE_CUSTOM_DISPLAY_DRIVER) == 1
