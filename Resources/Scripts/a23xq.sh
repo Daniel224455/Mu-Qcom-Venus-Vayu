@@ -15,9 +15,9 @@ python3 ./Resources/Scripts/mkbootimg.py \
   --os_version 13.0.0 \
   --os_patch_level "$(date '+%Y-%m')" \
   --header_version 1 \
-  -o boot.img \
+  -o recovery.img \
   ||_error "\nFailed to create Android Boot Image!\n"
 
 # Make flashable .tar file for Odin/Heimdall
-tar -c boot.img -f Mu-a23xq.tar||exit 1
-mv boot.img Mu-a23xq.img||exit 1
+tar -c recovery.img -f Mu-a23xq.tar||exit 1
+mv recovery.img Mu-a23xq.img||exit 1
