@@ -90,7 +90,6 @@
   INF Binaries/a23xq/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/UsbInitDxe/UsbInitDxe.inf
   INF Binaries/a23xq/QcomPkg/SocPkg/StraitPkg/Drivers/RNGDxe/RngDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/CcicDxe/CcicDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/MuicDxe/MuicDxe.inf
