@@ -76,7 +76,6 @@
 !endif
 
   INF Binaries/a23xq/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/GLinkDxe/GLinkDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
