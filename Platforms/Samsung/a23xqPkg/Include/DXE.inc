@@ -77,7 +77,6 @@
 
   INF Binaries/a23xq/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/IPCCDxe/IPCCDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/GLinkDxe/GLinkDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/PmicGlinkDxe/PmicGlinkDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
@@ -107,5 +106,4 @@
   INF Binaries/a23xq/QcomPkg/Drivers/SamsungDxe/BoardInfoDxe/BoardInfoDxe.inf
 
   #INF Binaries/a23xq/QcomPkg/Drivers/PILDxe/PILDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/PILProxyDxe/PILProxyDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/SPSSDxe/SPSSDxe.inf
