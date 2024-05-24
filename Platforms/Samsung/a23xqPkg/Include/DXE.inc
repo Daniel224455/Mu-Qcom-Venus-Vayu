@@ -28,7 +28,6 @@
 
   INF Binaries/a23xq/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/ProjectInfoDxe/ProjectInfoDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/DALSYSDxe/DALSYSDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
