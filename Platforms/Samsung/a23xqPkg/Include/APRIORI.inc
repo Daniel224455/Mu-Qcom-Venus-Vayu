@@ -33,7 +33,6 @@ APRIORI DXE {
 
   INF QcomPkg/Drivers/ClockSpeedUpDxe/ClockSpeedUpDxe.inf
 
-  INF Binaries/a23xq/QcomPkg/Drivers/ICBDxe/ICBDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf
   INF Binaries/a23xq/QcomPkg/Drivers/TzDxe/ScmDxeLA.inf
   INF Binaries/a23xq/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
