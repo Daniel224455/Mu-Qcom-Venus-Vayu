@@ -39,8 +39,6 @@
   INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
 
   INF Binaries/a23xq/QcomPkg/Drivers/UFSDxe/UFSDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
-  INF Binaries/a23xq/QcomPkg/Drivers/PwrUtilsDxe/PwrUtilsDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/RpmhDxe/RpmhDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
