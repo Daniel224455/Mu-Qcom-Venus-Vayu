@@ -94,7 +94,7 @@ APRIORI DXE {
   INF Binaries/a23xq/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
   INF Binaries/a23xq/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
 !if $(USE_CUSTOM_DISPLAY_DRIVER) == 1
-  INF Binaries/a23xq/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
+  INF Binaries/a23xq/QcomPkg/Drivers/CipherDxe/CipherDxe.inf
 !endif
   INF Binaries/a23xq/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
   INF Binaries/a23xq/QcomPkg/SocPkg/StraitPkg/Drivers/RNGDxe/RngDxe.inf
