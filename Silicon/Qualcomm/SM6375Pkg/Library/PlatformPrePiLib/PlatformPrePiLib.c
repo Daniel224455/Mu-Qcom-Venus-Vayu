@@ -7,5 +7,5 @@ VOID
 PlatformInitialize ()
 {
   // Disable WatchDog Timer
-  // MmioWrite32 (APSS_WDT_BASE + APSS_WDT_ENABLE_OFFSET, 0x0);
+  MmioWrite32 (APSS_WDT_BASE + APSS_WDT_ENABLE_OFFSET, 0x0);
 }
