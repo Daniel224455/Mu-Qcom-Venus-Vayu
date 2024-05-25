@@ -421,7 +421,7 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 <tr><th>Windows</th></tr>
 <tr><td>
 
-NOTE: Needs Windows Drivers!
+NOTE: Needs Windows [Drivers](https://github.com/N1kroks/SM8250-Drivers)!
 
 |Feature|Description|State|
 |:------|:----------|:---:|
@@ -434,7 +434,7 @@ NOTE: Needs Windows Drivers!
 |Gyroscope Sensor||❌|
 |Fingerprint Sensor||❌|
 |NFC Sensor||❌|
-|Battery||❌|
+|Battery||✅|
 |USB Mode|Host Mode only|⚠️|
 |USB PD||✅|
 |Charging||❌|
@@ -670,7 +670,7 @@ NOTE: Needs Windows Drivers!
 **State: Inactive** <br />
 **Codename: pipa** <br />
 **Maintainer: [6adp](https://github.com/6adp)** <br />
-**Contibuters: [Statzar](https://github.com/Statzar), [Robotix22](https://github.com/Robotix22/)** <br />
+**Contibuters: [Statzar](https://github.com/Statzar), [N1kroks](https://github.com/N1kroks), [Robotix22](https://github.com/Robotix22/)** <br />
 **Tester: [6adp](https://github.com/6adp)**
 
 ### UEFI Status
@@ -680,7 +680,7 @@ NOTE: Needs Windows Drivers!
 |Display||✅|
 |Internal Storage||✅|
 |Buttons||✅|
-|USB Mode|Host Mode Only|⚠️|
+|USB Mode|Dualrole|✅|
 |USB PD||✅|
 |Windows Boot||✅|
 |Linux Boot||✅|
@@ -692,18 +692,20 @@ NOTE: Needs Windows Drivers!
 <tr><th>Windows</th><th>Linux</th></tr>
 <tr><td>
 
+NOTE: Needs Windows [Drivers](https://github.com/N1kroks/SM8250-Drivers)!
+
 |Feature|Description|State|
 |:------|:----------|:---:|
 |Internal Storage||✅|
-|Buttons||❌|
+|Buttons||✅|
 |Proximity Sensor||❌|
 |Light Sensor||❌|
 |Accelerometer Sensor||❌|
 |Compass Sensor||❌|
 |Gyroscope Sensor||❌|
 |Hall Sensor||❌|
-|Battery||❌|
-|USB Mode|Host Mode Only|⚠️|
+|Battery||✅|
+|USB Mode|Host Mode only|⚠️|
 |USB PD||✅|
 |Charging||❌|
 |WLAN||❌|
@@ -1129,13 +1131,39 @@ NOTE: Needs Windows Drivers!
 |Windows Boot||❌|
 |Linux Boot||❌|
 
+</td></tr> </table>
+
+## POCO X3 NFC
+
+<img align="right" src="https://github.com/Robotix22/Mu-Qcom/blob/main/Resources/Pictures/Xiaomi-Poco-X3-NFC.png" width="500" alt="Preview">
+
+**State: Active** <br />
+**Codename: surya** <br />
+**Maintainer: remtrik** <br />
+**Contibuter: None** <br />
+**Tester: None**
+
+### UEFI Status
+
+|Feature|Description|State|
+|:------|:----------|:---:|
+|Display||✅|
+|Touchscreen||❌|
+|Internal Storage||✅|
+|Buttons||✅|
+|USB Mode||❌|
+|USB PD||❌|
+|SD Card||❌|
+|Windows Boot||❌|
+|Linux Boot||❌|
+
   </summary>
 </details>
 
 <details>
 <summary><b><strong>Snapdragon 720G Devices</strong></b></summary>
 
-## Xiaomi Redmi Note 9S
+## Xiaomi Redmi Note 9 Pro / 9 Pro India / 9 Pro Max India / 10 Lite / 9S / Poco M2 Pro
 
 <img align="right" src="https://github.com/Robotix22/Mu-Qcom/blob/main/Resources/Pictures/Xiaomi-Redmi-Note-9S.png" width="500" alt="Preview">
 
@@ -1164,12 +1192,12 @@ NOTE: Needs Windows Drivers!
 <tr><th>Windows</th></tr>
 <tr><td>
 
-NOTE: Needs Windows Drivers!
+NOTE: Needs Windows [Drivers](https://github.com/N1kroks/7xx-Drivers/releases/latest)!
 
 |Feature|Description|State|
 |:------|:----------|:---:|
 |Internal Storage||✅|
-|SD Card||❌|
+|SD Card|Only if inserted before OS boots, and hot plugging doesn't work|⚠️|
 |Buttons||✅|
 |Proximity Sensor||❌|
 |Light Sensor||❌|
@@ -1181,17 +1209,17 @@ NOTE: Needs Windows Drivers!
 |Battery||❌|
 |USB||✅|
 |Charging||❌|
-|WLAN|Need manualy install driver|✅|
+|WLAN||✅|
 |CPU||✅|
 |Touchscreen||✅|
 |Bluetooth||✅|
 |GPS||✅|
-|Speakers|Sometimes the sound appears|⚠️|
+|Speakers||❌|
 |3.5mm Audio Jack||❌|
 |Microphone||❌|
 |GPU||✅|
 |Camera||❌|
-|Mobile Data||❌|
+|Mobile Data||✅|
 |Display||✅|
 |Vibration||❌|
 

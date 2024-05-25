@@ -30,6 +30,7 @@
 
 [FixedPcd]
   gArmTokenSpaceGuid.PcdFvSize
+  gQcomPkgTokenSpaceGuid.PcdScheduleInterfaceAddr
 
 [Pcd]
   gArmTokenSpaceGuid.PcdFvBaseAddress
@@ -38,6 +39,7 @@
   gEfiInfoBlkHobGuid
   gEfiShimLibraryHobGuid
   gFvDecompressHobGuid
+  gEfiScheduleInterfaceHobGuid
 
 [Depex]
   gEfiPeiMemoryDiscoveredPpiGuid
