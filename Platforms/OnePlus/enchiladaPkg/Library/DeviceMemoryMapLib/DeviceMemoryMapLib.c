@@ -14,7 +14,7 @@ gDeviceMemoryDescriptorEx[] = {
   {"SMEM",              0x86000000, 0x00200000,  AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
   {"DXE Heap",          0x97C00000, 0x05730000,  AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
   {"DBI Dump",          0x9D330000, 0x000D0000,  NoHob,  MMAP_IO, INITIALIZED, Conv,   NS_DEVICE },
-  {"Display Reserved",  0x9D400000, 0x02400000,  AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
+  {"Display Reserved",  0x9D400000, 0x02400000,  AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH_XN},
   {"FV Region",         0x9F800000, 0x00200000,  AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
   {"ABOOT FV",          0x9FA00000, 0x00200000,  AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
   {"UEFI FD",           0x9FC00000, 0x00300000,  AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
