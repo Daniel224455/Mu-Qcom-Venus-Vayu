@@ -46,13 +46,6 @@ gDeviceMemoryDescriptorEx[] = {
   {"Capsule Header",   0x9FFE2000, 0x00001000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, UNCACHED_UNBUFFERED_XN},
   {"RSRV2",            0x9FFE3000, 0x00014000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
 
-  // 6GiB Ram
-  {"RAM Partition",     0xD0000000, 0x12AE00000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-
-  // 8GiB Ram
-  {"RAM Partition",     0xD0000000, 0x0B0000000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-  {"RAM Partition",     0x180000000,0x0FC7A0000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-
   // Other memory regions
   {"AOP_SS_MSG_RAM",    0x0C300000, 0x00100000,  NoHob,  MMAP_IO, INITIALIZED, Conv,   NS_DEVICE},
   {"IMEM Base",         0x14680000, 0x0003F000,  NoHob,  MMAP_IO, INITIALIZED, Conv,   NS_DEVICE},
