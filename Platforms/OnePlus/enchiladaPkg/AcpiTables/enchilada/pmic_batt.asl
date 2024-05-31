@@ -1,4 +1,4 @@
-Include("cust_pmic_batt_enchilada.asl")
+Include("cust_pmic_batt.asl")
 
     //
     // PMIC Battery Manger Driver
