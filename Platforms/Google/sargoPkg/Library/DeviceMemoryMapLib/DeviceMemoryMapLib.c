@@ -7,7 +7,6 @@ gDeviceMemoryDescriptorEx[] = {
   // Name, Address, Length, HobOption, ResourceAttribute, ArmAttributes, ResourceType, MemoryType
 
   // DDR Regions
-  {"Kernel",            0x80000000, 0x05600000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
   {"HYP",               0x85700000, 0x00600000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
   {"ipc_shm",           0x85DD0000, 0x00020000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
   {"boot_info",         0x85DF0000, 0x00010000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
