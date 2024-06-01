@@ -11,7 +11,6 @@ gDeviceMemoryDescriptorEx[] = {
   //use sony ramparts
   {"RAM Partition",     0x80000000, 0x05800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
   {"RAM Partition",     0x85E00000, 0x00200000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-  //end
   {"Runtime Data",     0x85600000, 0x00080000, AddMem, SYS_MEM, SYS_MEM_CAP, RtData, WRITE_BACK_XN},
   {"Runtime Code",     0x85680000, 0x00080000, AddMem, SYS_MEM, SYS_MEM_CAP, RtCode, WRITE_BACK_XN},
   {"HLOS 1",           0x81AC0000, 0x03B40000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK_XN},
