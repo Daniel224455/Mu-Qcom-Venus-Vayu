@@ -7,7 +7,6 @@ gDeviceMemoryDescriptorEx[] = {
   // Name, Address, Length, HobOption, ResourceAttribute, ArmAttributes, ResourceType, MemoryType
 
   // DDR Regions
-   // DDR Regions
   {"RAM Partition",    0x80000000, 0x01AC0000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
   {"Runtime Data",     0x85600000, 0x00080000, AddMem, SYS_MEM, SYS_MEM_CAP, RtData, WRITE_BACK_XN},
   {"Runtime Code",     0x85680000, 0x00080000, AddMem, SYS_MEM, SYS_MEM_CAP, RtCode, WRITE_BACK_XN},
@@ -99,6 +98,10 @@ gDeviceMemoryDescriptorEx[] = {
   {"APSS_GIC500_GICR", 0x17A60000, 0x00100000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
   {"QTIMER",           0x17C00000, 0x00110000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
   {"OSM",              0x17D20000, 0x000B0000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
+  {"PCIE_0_WRAPPER_AXI",0x60000000, 0x02000000,  AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
+  {"PCIE_1_WRAPPER_AXI",0x40000000, 0x02000000,  AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
+  {"PCIE_0_WRAPPER_AHB",0x01C00000, 0x00008000,  AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
+  {"PCIE_1_WRAPPER_AHB",0x01C08000, 0x00008000,  AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
 
   // Terminator for MMU
   {"Terminator", 0, 0, 0, 0, 0, 0, 0}
