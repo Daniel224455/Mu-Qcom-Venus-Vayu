@@ -90,7 +90,7 @@
   gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
   # Dynamic RAM Start Address
-  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA1200000
+  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA0000000
 
   # SD Card Slot
   gQcomPkgTokenSpaceGuid.PcdSDCardSlotPresent|TRUE
@@ -109,6 +109,3 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|126
 
 !include SM7125Pkg/SM7125Pkg.dsc.inc
-
-[LibraryClasses]
-  AcpiPlatformUpdateLib|miatollPkg/Library/AcpiPlatformUpdateLib/AcpiPlatformUpdateLib.inf
