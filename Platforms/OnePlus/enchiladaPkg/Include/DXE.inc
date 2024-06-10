@@ -91,5 +91,6 @@
   INF Binaries/enchilada/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/HashDxe/HashDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/RNGDxe/RngDxe.inf
+  INF Binaries/enchilada/QcomPkg/Drivers/LinuxLoader/LinuxLoader.inf
 
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
