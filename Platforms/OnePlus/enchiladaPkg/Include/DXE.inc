@@ -28,12 +28,11 @@
 
   INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
   INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
-  INF ArmPkg/Drivers/ArmPsciMpServicesDxe/ArmPsciMpServicesDxe.inf
 
   INF Binaries/enchilada/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
 
-  #INF QcomPkg/Drivers/DynamicRamDxe/DynamicRamDxe.inf
+  INF QcomPkg/Drivers/DynamicRamDxe/DynamicRamDxe.inf
 
   INF Binaries/enchilada/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/NpaDxe/NpaDxe.inf
