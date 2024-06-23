@@ -47,15 +47,14 @@ gDeviceMemoryDescriptorEx[] = {
 
     /* RAM partition regions */
     {"DXE Heap",          0x97C00000, 0x05730000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
-    {"UEFI FD",           0xCE000000, 0x02000000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
 
     /* 4GiB Memory */
     //{"RAM Partition",     0xD0000000, 0x0ADFA0000, Mem4G,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     /* 6GiB Memory */
     //{"RAM Partition",     0xD0000000, 0x12AE00000, Mem6G,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     /* 8GiB Memory */
-    //{"RAM Partition",     0xD0000000, 0x0B0000000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-    //{"RAM Partition",     0x180000000,0x0FC7A0000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
+    {"RAM Partition",     0xD0000000, 0x0B0000000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
+    {"RAM Partition",     0x180000000,0x0FC7A0000, AddMem,  SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     /* 10GiB Memory */
     //{"RAM Partition",     0xD0000000, 0x224AC0000, Mem10G,  SYS_MEM, SYS_MEM_CAP, Conv,  WRITE_BACK_XN},
 
