@@ -7,6 +7,7 @@
 
 #include <AsmMacroIoLibV8.h>
 #include <Library/ArmLib.h>
+#include <Library/PcdLib.h>
 
 .text
 .align 3
