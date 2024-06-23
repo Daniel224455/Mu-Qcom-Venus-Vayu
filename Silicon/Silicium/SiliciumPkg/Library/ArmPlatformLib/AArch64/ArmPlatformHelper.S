@@ -12,6 +12,7 @@
 .align 3
 
 ASM_FUNC(ArmPlatformPeiBootAction)
+msr SPSel, #1
 startlabel:
   // check if we're located at expected location
   adr	x4, .
@@ -37,6 +38,7 @@ loop:
   b.ne	loop
   ret
 .ltorg
+ret
 
 //UINTN
 //ArmPlatformGetCorePosition (
