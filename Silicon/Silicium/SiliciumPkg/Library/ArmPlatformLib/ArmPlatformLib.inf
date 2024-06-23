@@ -44,7 +44,7 @@
   gArmTokenSpaceGuid.PcdArmPrimaryCoreMask
   gArmTokenSpaceGuid.PcdArmPrimaryCore
   gArmTokenSpaceGuid.PcdFdSize
-  gArmTokenSpaceGuid.PcdFdBaseAddress
+  gArmTokenSpaceGuid.PcdFdBase
   gArmPlatformTokenSpaceGuid.PcdCoreCount
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel
 
