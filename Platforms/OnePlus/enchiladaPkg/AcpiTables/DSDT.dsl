@@ -36,11 +36,11 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         //
         // USB Port (Incomplete)
         //
-        Include ("usb.dsl")
+        Include ("usb.dsl");
 
         //
         // Buttons
         //
-        Include ("buttons.dsl")
+        Include ("buttons.dsl");
     }
 }
