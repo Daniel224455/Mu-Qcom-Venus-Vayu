@@ -9,24 +9,19 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         Name (PSUB, "MTP00845")
 
         //
-        // SD Card
-        //
-        //Include ("sd-card.asl")
-
-        //
         // PMIC (Incomplete)
         //
-        //Include ("pmic.asl")
+        Include ("pmic.asl")
 
         //
         // SPMI
         //
-        //Include ("spmi.asl")
+        Include ("spmi.asl")
 
         //
         // GPIO Controller
         //
-        //Include ("gpio.asl")
+        Include ("gpio.asl")
 
         //
         // CPU Cores & Clusters
@@ -41,7 +36,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         //
         // USB Port (Incomplete)
         //
-        //Include ("usb.asl")
+        Include ("usb.asl")
 
         //
         // Buttons
