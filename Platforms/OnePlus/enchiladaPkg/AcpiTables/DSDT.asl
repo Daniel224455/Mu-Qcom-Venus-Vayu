@@ -44,8 +44,8 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         //Include ("usb.asl")
 
         //
-        // Buttons (Incomplete and Broken?)
+        // Buttons
         //
-        //Include ("buttons.asl")
+        Include ("buttons.asl")
     }
 }
