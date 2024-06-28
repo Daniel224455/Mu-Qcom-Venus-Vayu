@@ -71,5 +71,6 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM845 ", 0x00000003)
         // Buttons
         //
         Include ("buttons.dsl");
+        }
     }
 }
