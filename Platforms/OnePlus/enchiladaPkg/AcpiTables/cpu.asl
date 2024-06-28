@@ -1,594 +1,1518 @@
 //
 // CPU (Central Processing Unit) Cores & Clusters
 //
-Device (SYSM)
-{
-    Name (_HID, "ACPI0010")                                                                                                             // Hardware ID
-    Name (_UID, 0x00100000)                                                                                                             // Unique ID
-
-    Device (CLU0)
-    {
-        Name (_HID, "ACPI0010")                                                                                                         // Hardware ID
-        Name (_UID, 0x10)                                                                                                               // Unique ID
-
-        Name (_LPI, Package ()                                                                                                          // Low Power Idle States
+        Device (SYSM)
         {
-            0,                                                                                                                          // Version
-            0x1000000,                                                                                                                  // Level ID
-            2,                                                                                                                          // Count
-
-            Package ()
+            Name (_HID, "ACPI0010" /* Processor Container Device */)  // _HID: Hardware ID
+            Name (_UID, 0x00100000)  // _UID: Unique ID
+            Name (_LPI, Package (0x05)  // _LPI: Low Power Idle States
             {
-                504,                                                                                                                    // Minimal Residency (us)
-                134,                                                                                                                    // Wake Latency      (us)
-                0,                                                                                                                      // Enable State
-                0,                                                                                                                      // Arch Context Flag
-                0,                                                                                                                      // Residency Counter Frequency
-                0,                                                                                                                      // Parent Enable State
-                0x20,                                                                                                                   // Integer Entry Method
+                Zero, 
+                0x01000000, 
+                0x02, 
+                Package (0x0A)
+                {
+                    0x251C, 
+                    0x1770, 
+                    Zero, 
+                    0x20, 
+                    Zero, 
+                    Zero, 
+                    0x3300, 
+                    ResourceTemplate ()
+                    {
+                        Register (SystemMemory, 
+                            0x00,               // Bit Width
+                            0x00,               // Bit Offset
+                            0x0000000000000000, // Address
+                            ,)
+                    }, 
 
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Residency Counter Register
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Usage Counter Register
+                    ResourceTemplate ()
+                    {
+                        Register (SystemMemory, 
+                            0x00,               // Bit Width
+                            0x00,               // Bit Offset
+                            0x0000000000000000, // Address
+                            ,)
+                    }, 
 
-                "L2Active.D2"                                                                                                           // Name
-            }, 
+                    "platform.F1"
+                }, 
 
-            Package ()
+                Package (0x0A)
+                {
+                    0x2710, 
+                    0x19C8, 
+                    One, 
+                    0x20, 
+                    Zero, 
+                    Zero, 
+                    0xC300, 
+                    ResourceTemplate ()
+                    {
+                        Register (SystemMemory, 
+                            0x00,               // Bit Width
+                            0x00,               // Bit Offset
+                            0x0000000000000000, // Address
+                            ,)
+                    }, 
+
+                    ResourceTemplate ()
+                    {
+                        Register (SystemMemory, 
+                            0x00,               // Bit Width
+                            0x00,               // Bit Offset
+                            0x0000000000000000, // Address
+                            ,)
+                    }, 
+
+                    "platform.F2"
+                }
+            })
+            Device (CLUS)
             {
-                9183,                                                                                                                   // Minimal Residency (us)
-                4562,                                                                                                                   // Wake Latency      (us)
-                1,                                                                                                                      // Enable State
-                0,                                                                                                                      // Arch Context Flag
-                0,                                                                                                                      // Residency Counter Frequency
-                1,                                                                                                                      // Parent Enable State
-                0x40,                                                                                                                   // Integer Entry Method
+                Name (_HID, "ACPI0010" /* Processor Container Device */)  // _HID: Hardware ID
+                Name (_UID, 0x10)  // _UID: Unique ID
+                Name (_LPI, Package (0x05)  // _LPI: Low Power Idle States
+                {
+                    Zero, 
+                    0x01000000, 
+                    0x02, 
+                    Package (0x0A)
+                    {
+                        0x170C, 
+                        0x0BB8, 
+                        Zero, 
+                        Zero, 
+                        Zero, 
+                        Zero, 
+                        0x20, 
+                        ResourceTemplate ()
+                        {
+                            Register (SystemMemory, 
+                                0x00,               // Bit Width
+                                0x00,               // Bit Offset
+                                0x0000000000000000, // Address
+                                ,)
+                        }, 
 
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Residency Counter Register
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Usage Counter Register
+                        ResourceTemplate ()
+                        {
+                            Register (SystemMemory, 
+                                0x00,               // Bit Width
+                                0x00,               // Bit Offset
+                                0x0000000000000000, // Address
+                                ,)
+                        }, 
 
-                "L2PowerCollapse.D4"                                                                                                    // Name
+                        "L3Cluster.D2"
+                    }, 
+
+                    Package (0x0A)
+                    {
+                        0x1770, 
+                        0x0CE4, 
+                        One, 
+                        Zero, 
+                        Zero, 
+                        0x02, 
+                        0x40, 
+                        ResourceTemplate ()
+                        {
+                            Register (SystemMemory, 
+                                0x00,               // Bit Width
+                                0x00,               // Bit Offset
+                                0x0000000000000000, // Address
+                                ,)
+                        }, 
+
+                        ResourceTemplate ()
+                        {
+                            Register (SystemMemory, 
+                                0x00,               // Bit Width
+                                0x00,               // Bit Offset
+                                0x0000000000000000, // Address
+                                ,)
+                        }, 
+
+                        "L3Cluster.D4"
+                    }
+                })
+                Device (CPU0)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, Zero)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver0.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver0.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x1388, 
+                            0x01F4, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver0.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x13EC, 
+                            0x0226, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver0.C4"
+                        }
+                    })
+                }
+
+                Device (CPU1)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, One)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver1.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver1.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x1388, 
+                            0x01F4, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver1.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x13EC, 
+                            0x0226, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver1.C4"
+                        }
+                    })
+                }
+
+                Device (CPU2)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x02)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver2.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver2.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x1388, 
+                            0x01F4, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver2.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x13EC, 
+                            0x0226, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver2.C4"
+                        }
+                    })
+                }
+
+                Device (CPU3)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x03)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver3.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver3.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x1388, 
+                            0x01F4, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver3.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x13EC, 
+                            0x0226, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoSilver3.C4"
+                        }
+                    })
+                }
+
+                Device (CPU4)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x04)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold0.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold0.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x03E8, 
+                            0x028A, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold0.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x05DC, 
+                            0x044C, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold0.C4"
+                        }
+                    })
+                }
+
+                Device (CPU5)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x05)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold1.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold1.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x03E8, 
+                            0x028A, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold1.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x05DC, 
+                            0x044C, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold1.C4"
+                        }
+                    })
+                }
+
+                Device (CPU6)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x06)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold2.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold2.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x03E8, 
+                            0x028A, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold2.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x05DC, 
+                            0x044C, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold2.C4"
+                        }
+                    })
+                }
+
+                Device (CPU7)
+                {
+                    Name (_HID, "ACPI0007" /* Processor Device */)  // _HID: Hardware ID
+                    Name (_UID, 0x07)  // _UID: Unique ID
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
+                    {
+                        Return (0x0F)
+                    }
+
+                    Name (_LPI, Package (0x07)  // _LPI: Low Power Idle States
+                    {
+                        Zero, 
+                        Zero, 
+                        0x04, 
+                        Package (0x0A)
+                        {
+                            Zero, 
+                            Zero, 
+                            One, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x00000000FFFFFFFF, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold3.C1"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x0190, 
+                            0x64, 
+                            Zero, 
+                            Zero, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000002, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold3.C2"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x03E8, 
+                            0x028A, 
+                            One, 
+                            One, 
+                            Zero, 
+                            One, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000003, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold3.C3"
+                        }, 
+
+                        Package (0x0A)
+                        {
+                            0x05DC, 
+                            0x044C, 
+                            One, 
+                            One, 
+                            Zero, 
+                            0x02, 
+                            ResourceTemplate ()
+                            {
+                                Register (FFixedHW, 
+                                    0x20,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000040000004, // Address
+                                    0x03,               // Access Size
+                                    )
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            ResourceTemplate ()
+                            {
+                                Register (SystemMemory, 
+                                    0x00,               // Bit Width
+                                    0x00,               // Bit Offset
+                                    0x0000000000000000, // Address
+                                    ,)
+                            }, 
+
+                            "KryoGold3.C4"
+                        }
+                    })
+                }
             }
-        })
-
-        Device (CPU0)
-        {
-            Name   (_HID, "ACPI0007")                                                                                                   // Hardware ID
-            Name   (_UID, 0)                                                                                                            // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver0.C1"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    504,                                                                                                                // Minimal Residency (us)
-                    86,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoSilver0.C2"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    9183,                                                                                                               // Minimal Residency (us)
-                    4562,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver0.C3"                                                                                                    // Name
-                }
-            })
         }
-
-        Device (CPU1)
-        {
-            Name   (_HID, "ACPI0007")                                                                                                   // Hardware ID
-            Name   (_UID, 1)                                                                                                            // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver1.C1"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    504,                                                                                                                // Minimal Residency (us)
-                    86,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoSilver1.C2"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    9183,                                                                                                               // Minimal Residency (us)
-                    4562,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver1.C3"                                                                                                    // Name
-                }
-            })
-        }
-
-        Device (CPU2)
-        {
-            Name   (_HID, "ACPI0007")                                                                                                   // Hardware ID
-            Name   (_UID, 2)                                                                                                            // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver2.C1"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    504,                                                                                                                // Minimal Residency (us)
-                    86,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoSilver2.C2"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    9183,                                                                                                               // Minimal Residency (us)
-                    4562,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver2.C3"                                                                                                    // Name
-                }
-            })
-        }
-
-        Device (CPU3)
-        {
-            Name   (_HID, "ACPI0007")                                                                                                   // Hardware ID
-            Name   (_UID, 3)                                                                                                            // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver3.C1"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    504,                                                                                                                // Minimal Residency (us)
-                    86,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoSilver3.C2"                                                                                                    // Name
-                }, 
-
-                Package ()
-                {
-                    9183,                                                                                                               // Minimal Residency (us)
-                    4562,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoSilver3.C3"                                                                                                    // Name
-                }
-            })
-        }
-    }
-
-    Device (CLU1)
-    {
-        Name (_HID, "ACPI0010")                                                                                                         // Hardware ID
-        Name (_UID, 0x20)                                                                                                               // Unique ID
-
-        Name (_LPI, Package ()                                                                                                          // Low Power Idle States
-        {
-            0,                                                                                                                          // Version
-            0x1000000,                                                                                                                  // Level ID
-            2,                                                                                                                          // Count
-
-            Package ()
-            {
-                1302,                                                                                                                   // Minimal Residency (us)
-                82,                                                                                                                     // Wake Latency      (us)
-                0,                                                                                                                      // Enable State
-                0,                                                                                                                      // Arch Context Flag
-                0,                                                                                                                      // Residency Counter Frequency
-                0,                                                                                                                      // Parent Enable State
-                0x20,                                                                                                                   // Integer Entry Method
-
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Residency Counter Register
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Usage Counter Register
-
-                "L2Active.D2"                                                                                                           // Name
-            }, 
-
-            Package ()
-            {
-                9419,                                                                                                                   // Minimal Residency (us)
-                2027,                                                                                                                   // Wake Latency      (us)
-                1,                                                                                                                      // Enable State
-                0,                                                                                                                      // Arch Context Flag
-                0,                                                                                                                      // Residency Counter Frequency
-                1,                                                                                                                      // Parent Enable State
-                0x40,                                                                                                                   // Integer Entry Method
-
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Residency Counter Register
-                ResourceTemplate () { Register (SystemMemory, 0, 0, 0, 0) },                                                            // Usage Counter Register
-
-                "L2PowerCollapse.D4"                                                                                                    // Name
-            }
-        })
-
-        Device (CPU4)
-        {
-            Name (_HID, "ACPI0007")                                                                                                     // Hardware ID
-            Name (_UID, 4)                                                                                                              // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold0.C1"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    516,                                                                                                                // Minimal Residency (us)
-                    82,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoGold0.C2"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    9419,                                                                                                               // Minimal Residency (us)
-                    2027,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold0.C3"                                                                                                      // Name
-                }
-            })
-        }
-
-        Device (CPU5)
-        {
-            Name (_HID, "ACPI0007")                                                                                                     // Hardware ID
-            Name (_UID, 5)                                                                                                              // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold1.C1"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    516,                                                                                                                // Minimal Residency (us)
-                    82,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoGold1.C2"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    9419,                                                                                                               // Minimal Residency (us)
-                    2027,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold1.C3"                                                                                                      // Name
-                }
-            })
-        }
-
-        Device (CPU6)
-        {
-            Name (_HID, "ACPI0007")                                                                                                     // Hardware ID
-            Name (_UID, 6)                                                                                                              // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold2.C1"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    516,                                                                                                                // Minimal Residency (us)
-                    82,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoGold2.C2"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    9419,                                                                                                               // Minimal Residency (us)
-                    2027,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold2.C3"                                                                                                      // Name
-                }
-            })
-        }
-
-        Device (CPU7)
-        {
-            Name (_HID, "ACPI0007")                                                                                                     // Hardware ID
-            Name (_UID, 7)                                                                                                              // Unique ID
-            Method (_STA, 0, NotSerialized) { Return (0x0F) }                                                                           // Status
-
-            Name (_LPI, Package ()                                                                                                      // Low Power Idle States
-            {
-                0,                                                                                                                      // Version
-                0,                                                                                                                      // Level ID
-                3,                                                                                                                      // Count
-
-                Package ()
-                {
-                    0,                                                                                                                  // Minimal Residency (us)
-                    0,                                                                                                                  // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    0,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0xFFFFFFFF, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold3.C1"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    516,                                                                                                                // Minimal Residency (us)
-                    82,                                                                                                                 // Wake Latency      (us)
-                    0,                                                                                                                  // Enable State
-                    0,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 2, 3) },                                                     // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0, 0) },                                                     // Usage Counter Register
-
-                    "KryoGold3.C2"                                                                                                      // Name
-                }, 
-
-                Package ()
-                {
-                    9419,                                                                                                               // Minimal Residency (us)
-                    2027,                                                                                                               // Wake Latency      (us)
-                    1,                                                                                                                  // Enable State
-                    1,                                                                                                                  // Arch Context Flag
-                    0,                                                                                                                  // Residency Counter Frequency
-                    1,                                                                                                                  // Parent Enable State
-
-                    ResourceTemplate () { Register (FFixedHW,     0x20, 0, 0x40000003, 3) },                                            // Register Entry Method
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Residency Counter Register
-                    ResourceTemplate () { Register (SystemMemory, 0,    0, 0,  0) },                                                    // Usage Counter Register
-
-                    "KryoGold3.C3"                                                                                                      // Name
-                }
-            })
-        }
-    }
-}
