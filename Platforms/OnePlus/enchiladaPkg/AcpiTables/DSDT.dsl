@@ -11,36 +11,36 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         //
         // PMIC (Incomplete)
         //
-        Include ("pmic.asl")
+        Include ("pmic.dsl")
 
         //
         // SPMI
         //
-        Include ("spmi.asl")
+        Include ("spmi.dsl")
 
         //
         // GPIO Controller
         //
-        //Include ("gpio.asl")
+        //Include ("gpio.dsl")
 
         //
         // CPU Cores & Clusters
         //
-        Include ("cpu.asl")
+        Include ("cpu.dsl")
 
         //
         // UFS
         //
-        Include ("ufs.asl")
+        Include ("ufs.dsl")
 
         //
         // USB Port (Incomplete)
         //
-        Include ("usb.asl")
+        Include ("usb.dsl")
 
         //
         // Buttons
         //
-        Include ("buttons.asl")
+        Include ("buttons.dsl")
     }
 }
