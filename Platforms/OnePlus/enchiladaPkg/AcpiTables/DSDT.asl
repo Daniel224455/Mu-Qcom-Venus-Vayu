@@ -21,7 +21,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "QCOM  ", "SDM845 ", 3)
         //
         // GPIO Controller
         //
-        Include ("gpio.asl")
+        //Include ("gpio.asl")
 
         //
         // CPU Cores & Clusters
