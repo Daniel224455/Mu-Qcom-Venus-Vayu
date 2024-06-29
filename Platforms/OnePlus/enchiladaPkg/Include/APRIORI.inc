@@ -96,7 +96,6 @@ APRIORI DXE {
   INF Binaries/enchilada/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
-  INF Binaries/enchilada/QcomPkg/Drivers/LinuxLoader/LinuxLoader.inf
   INF Binaries/enchilada/QcomPkg/Drivers/HashDxe/HashDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 
