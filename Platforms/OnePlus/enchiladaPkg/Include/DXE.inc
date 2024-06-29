@@ -88,7 +88,6 @@
   INF Binaries/enchilada/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
-  INF Binaries/enchilada/QcomPkg/Drivers/LinuxLoader/LinuxLoader.inf
   INF Binaries/enchilada/QcomPkg/Drivers/HashDxe/HashDxe.inf
   INF Binaries/enchilada/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 
