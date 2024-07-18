@@ -69,7 +69,7 @@
   gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferColorDepth|32
 
   # Dynamic RAM Start Address
-  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xB9400000 //tbc
+  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xB9400000
 
   # SD Card Slot
   gQcomPkgTokenSpaceGuid.PcdInitCardSlot|TRUE
