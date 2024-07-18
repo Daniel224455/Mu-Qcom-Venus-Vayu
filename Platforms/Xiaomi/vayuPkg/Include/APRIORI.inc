@@ -69,7 +69,7 @@ APRIORI DXE {
   INF SiliciumPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 !endif
 
-  INF Binaries/vayu/QcomPkg/Drivers/PILDxe/PILDxe.inf
+  #INF Binaries/vayu/QcomPkg/Drivers/PILDxe/PILDxe.inf
 !if $(USE_CUSTOM_DISPLAY_DRIVER) == 1
   INF Binaries/vayu/QcomPkg/Drivers/CPRDxe/CPRDxe.inf
 !endif
