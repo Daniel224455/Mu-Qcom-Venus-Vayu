@@ -23,7 +23,7 @@
   BUILD_TARGETS                  = RELEASE|DEBUG
   SKUID_IDENTIFIER               = DEFAULT
   FLASH_DEFINITION               = lavenderPkg/lavender.fdf
-  USE_CUSTOM_DISPLAY_DRIVER      = 0
+  USE_CUSTOM_DISPLAY_DRIVER      = 1
   AB_SLOT_SUPPORT                = 0
   HAS_BUILD_IN_KEYBOARD          = 0
 
@@ -60,8 +60,8 @@
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"Xiaomi"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Redmi Note 7"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"lavender"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Note 7_lavender"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Note 7"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Redmi_Note 7_lavender"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Redmi Note 7"
 
   # Simple FrameBuffer
   gSiliciumPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
