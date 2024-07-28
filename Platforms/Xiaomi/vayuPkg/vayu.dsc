@@ -60,7 +60,7 @@
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemVendor|"Xiaomi Inc"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Poco X3 Pro"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vayu"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_vayu"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"PocoX3Pro_Vayu"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Poco X3 Pro"
 
   # Simple FrameBuffer
@@ -71,8 +71,11 @@
   # Dynamic RAM Start Address
   gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xB9400000
 
-  # SD Card Slot
-  gQcomPkgTokenSpaceGuid.PcdInitCardSlot|TRUE
+  # Memory Protection
+  gQcomPkgTokenSpaceGuid.PcdMemoryProtection|TRUE
+  
+  # SD Card Slot, disabled to test if its the root cause of UFS not working.
+  gQcomPkgTokenSpaceGuid.PcdInitCardSlot|FALSE
 
   # USB Controller
   gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE
