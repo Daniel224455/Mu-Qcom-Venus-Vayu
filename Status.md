@@ -40,7 +40,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -79,6 +78,30 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |Vibration||❌|
 
 </td></tr> </table>
+
+## Xiaomi 12 Pro
+
+<img align="right" src="Resources/Pictures/Xiaomi-12-Pro.png" width="500" alt="Preview">
+
+**State: Active** <br>
+**Codename: zeus** <br>
+**Maintainers: [2petro](https://github.com/2Petro)** <br>
+**Contibuters: [Robotix22](https://github.com/Robotix22/), [2petro](https://github.com/2Petro)** <br>
+**Testers: [2petro](https://github.com/2Petro)**
+
+### UEFI Status
+
+|Feature|Description|State|
+|:------|:----------|:---:|
+|Display||✅|
+|Internal Storage||✅|
+|Side Buttons||✅|
+|USB Host Mode||❔|
+|USB Device Mode||❔|
+|USB Power Delivery||❌|
+|Windows Boot||❔|
+|Linux Boot||❌|
+|Slot Switch||❌|
 
 ## Samsung Galaxy Tab S8 5G
 
@@ -238,7 +261,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot|Windows PE only|⚠️|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -304,7 +326,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot||❌|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ## Xiaomi 11T Pro
 
@@ -328,7 +349,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -402,7 +422,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||✅|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -559,7 +578,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -623,7 +641,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -686,7 +703,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||✅|
 |Windows Boot||✅|
 |Linux Boot||✅|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -779,7 +795,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||✅|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1099,7 +1114,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |USB Power Delivery||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1263,7 +1277,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||❌|
 |Windows Boot||✅|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1537,7 +1550,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||✅|
 |Windows Boot||✅|
 |Linux Boot||✅|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1634,7 +1646,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||✅|
 |Windows Boot||✅|
 |Linux Boot||✅|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1731,7 +1742,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||✅|
 |Windows Boot||✅|
 |Linux Boot||✅|
-|Slot Switch||✅|
 
 ### OS Status
 
@@ -1836,7 +1846,6 @@ NOTE: This Page might not Contain All Devices! Notify us if you Find one.
 |SD Card||❌|
 |Windows Boot||❌|
 |Linux Boot||❌|
-|Slot Switch||✅|
 
 ## Xiaomi Redmi Note 8/8T
 
